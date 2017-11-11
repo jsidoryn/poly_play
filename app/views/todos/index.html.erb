@@ -1,0 +1,8 @@
+<h2>Todos</h2>
+
+<% @todos.each do |todo| %>
+  <li><%= todo.title %><br />
+    <%= associate_project(Project.last, todo) %>
+    <%= link_to "Add to week", add_to_resource_weekly_plan_todo_path(WeeklyPlan.last, todo) %>
+  </li>
+<% end %>

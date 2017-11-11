@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  todoable: one
+  todoable_type: Todoable
+
+two:
+  title: MyString
+  todoable: two
+  todoable_type: Todoable

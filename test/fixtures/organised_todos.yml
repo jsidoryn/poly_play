@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  todoable: one
+  todoable_type: Todoable
+  todo: one
+
+two:
+  todoable: two
+  todoable_type: Todoable
+  todo: two
