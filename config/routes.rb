@@ -11,12 +11,11 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :projects do 
+  resources :projects do
     concerns :todoable
   end
 
-  resources :weekly_plans do 
+  resources :weekly_plans do
     concerns :todoable
   end
-
 end
