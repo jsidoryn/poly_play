@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171113214717) do
+ActiveRecord::Schema.define(version: 20_171_114_214_532) do
+  create_table "daily_plans", force: :cascade do |t|
+    t.string "title"
+    t.integer "user_id"
+    t.date "plan_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_daily_plans_on_user_id"
+  end
 
   create_table "organised_todos", force: :cascade do |t|
     t.string "todoable_type"
@@ -19,7 +27,7 @@ ActiveRecord::Schema.define(version: 20171113214717) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["todo_id"], name: "index_organised_todos_on_todo_id"
-    t.index ["todoable_type", "todoable_id"], name: "index_organised_todos_on_todoable_type_and_todoable_id"
+    t.index %w[todoable_type todoable_id], name: "index_organised_todos_on_todoable_type_and_todoable_id"
   end
 
   create_table "projects", force: :cascade do |t|
@@ -62,5 +70,4 @@ ActiveRecord::Schema.define(version: 20171113214717) do
     t.integer "user_id"
     t.index ["user_id"], name: "index_weekly_plans_on_user_id"
   end
-
 end
